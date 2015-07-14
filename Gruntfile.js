@@ -10,6 +10,7 @@ module.exports = function ( grunt ) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -273,6 +274,20 @@ module.exports = function ( grunt ) {
         },
 
         /**
+         * Compile less files
+         */
+        less: {
+          development: {
+            options: {
+              paths: [ "src/less", "src/vendor/lesshat/build" ]
+            },
+            files: {
+              "<%= build_dir %>/src/css/lesscompile.css": "src/less/**/*.less"
+            }
+          }
+        },
+
+        /**
           * The directories to delete when `grunt clean` is executed.
           */
         clean: {
@@ -304,7 +319,7 @@ module.exports = function ( grunt ) {
             options: {
                 livereload: true
             },
-            
+
             /**
             * When our JavaScript source files change, we want to run lint them and
             * run our unit tests.
@@ -322,6 +337,11 @@ module.exports = function ( grunt ) {
             css: {
                 files: [ 'src/**/*.css' ],
                 tasks: [ 'copy:build_appcss' ]
+            },
+
+            less: {
+              files: [ 'src/**/*.less' ],
+              tasks: [ 'less:development' ]
             },
 
             /**
@@ -375,7 +395,7 @@ module.exports = function ( grunt ) {
         },
 
         /**
-          * With connect we start a webserver on port 8000 which will have the build 
+          * With connect we start a webserver on port 8000 which will have the build
           * directory as it's root
           */
         connect: {
@@ -451,10 +471,10 @@ module.exports = function ( grunt ) {
       * The `build` task gets your app ready to run for development and testing.
       */
     grunt.registerTask( 'build', [
-        'clean:build', 'html2js', 'jshint:src',
+        'clean:build', 'html2js', 'jshint:src', 'less:development',
         'copy:build_app_assets', 'copy:build_vendor_assets', 'copy:build_vendorcss',
-        'copy:build_vendor_fonts',
-        'copy:build_appjs', 'copy:build_appcss', 'copy:build_vendorjs', 'index:build'
+        'copy:build_vendor_fonts', //'copy:build_appcss', 
+        'copy:build_appjs', 'copy:build_vendorjs', 'index:build'
     ]);
 
     /**
@@ -522,7 +542,7 @@ module.exports = function ( grunt ) {
         grunt.file.copy('ext.conf', grunt.config( 'mopidy_package_dir' ) + '/ext.conf');
     });
 
-    
+
     /**
       * A utility function to get all app JavaScript sources.
       */
@@ -537,7 +557,7 @@ module.exports = function ( grunt ) {
       */
     function filterForCSS ( files ) {
         return files.filter( function ( file ) {
-            return file.match( /\.css$/ ); 
+            return file.match( /\.css$/ );
         });
     }
 };

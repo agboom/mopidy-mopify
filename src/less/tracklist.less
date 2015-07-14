@@ -1,0 +1,43 @@
+@import 'lesshat';
+
+#tracklist {
+    .track {
+        padding: 7px 0;
+        border-top: 1px solid #ccc;
+        cursor: pointer;
+        .transition(all, .3s, ease);
+        .user-select(none);
+
+        .nowplaying {
+            background-image: url("../images/ani_equalizer_black.gif");
+            background-repeat: no-repeat;
+            background-position: right -7px;
+        }
+
+        .length {
+            color: #777;
+        }
+
+        a {
+            color: #777;
+        }
+    }
+
+    .track.loading {
+        cursor: default;
+        color: #aaa;
+        background-color: white !important;
+    }
+}
+
+#tracklistinfo {
+    padding-left: 80px;
+
+    #coverwrap {
+        width: 100%;
+        
+        img {
+            width: 100%;
+        }
+    }
+}

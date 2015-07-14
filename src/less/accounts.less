@@ -1,0 +1,87 @@
+@import 'lesshat';
+
+#accounts {
+    padding: 35px;
+    position: absolute;
+    bottom: 65px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    &.small {
+        .account {
+            margin: 5px 0 5px 0;
+            overflow: hidden;
+            height: 25px;
+            .profileimage {
+                width: 20px;
+                height: 20px;
+                img {
+                    width: 20px;
+                }
+            }
+            .content {
+                padding-left: 30px;
+                .username {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .notify {
+        margin: 10px 0 20px 0;
+
+        a {
+            color: #777;
+            font-weight: 300;
+            .transition(all, .3s, ease);
+
+            &:hover {
+                color: #000;
+                text-decoration: none !important;
+            }
+        }
+    }
+
+    .account {
+        margin: 5px 0 30px 0;
+        height: 45px;
+        width: 100%;
+        font-size: 17px;
+
+        .profileimage {
+            overflow: hidden;
+            width: 45px;
+            height: 45px;
+            float: left;
+            background-color: rgba(0,0,0,.1);
+            .border-radius(9999px);
+
+            &.icon {
+                padding: 13px 14px;
+                color: white;
+            }
+
+            img {
+                width: 45px;
+                vertical-align: top;
+            }
+        }
+
+        .content {
+            padding-left: 15px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            .status {
+                font-size: 12px;
+                color: #a2a2a2;
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

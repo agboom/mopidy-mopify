@@ -1,0 +1,171 @@
+@import 'lesshat';
+
+#radiosearch {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        background-color: rgba(0,0,0,.4);
+        opacity: 1;
+    }
+
+    &.ng-hide:before {
+        opacity: 0;
+    }
+
+    &.dropdownvisible {
+        .inputwrap {
+            input {
+                .border-bottom-right-radius(0px);
+                .border-radius(25px);
+                .border-bottom-left-radius(0px);
+            }
+        }
+        .resultswrap {
+            ul {
+                opacity: 1;
+            }
+        }
+    }
+
+    .title {
+        text-align: center;
+        margin-top: 80px;
+        font-size: 40px;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .inputwrap {
+        margin-top: 50px;
+        text-align: center;
+
+        input {
+            background: rgba(0,0,0,0);
+            border: 1px solid white;
+            width: 80%;
+            font-size: 19px;
+            padding: 10px 30px;
+            letter-spacing: 1px;
+            color: white;
+            .border-radius(25px);
+            .transition(all, .3s, ease);
+
+            &:focus {
+                background: rgba(0,0,0,.15);
+                outline: none;
+            }
+
+            &:-moz-placeholder {
+                color: #fff;
+                font-style: italic;
+                opacity: .7;
+                font-family: inherit;
+            }
+
+            &:-ms-input-placeholder {
+                color: #fff;
+                font-style: italic;
+                opacity: .7;
+                font-family: inherit;
+            }
+
+            &:-webkit-input-placeholder {
+                color: #fff;
+                font-style: italic;
+                opacity: .7;
+                font-family: inherit;
+            }
+
+            &:-moz-placeholder {
+                color: #fff;
+                font-style: italic;
+                opacity: .7;
+                font-family: inherit;
+            }
+        }
+    }
+
+    .resultswrap {
+        width: 80%;
+        margin-left: 10%;
+        position: absolute;
+        z-index: 100;
+        border-bottom-left-radius: 25px;
+        .border-bottom-right-radius(25px);
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            border: 1px solid white;
+            border-top: 0px solid white;
+            overflow: hidden;
+            opacity: 0;
+            .transition(all, .5s, ease);
+
+            li {
+                background-color: rgba(0,0,0,.9);
+                color: white;
+                height: 40px;
+                padding: 2px 30px;
+                border-bottom: 1px solid rgba(255,255,255,.3);
+                margin: 0;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+
+                .thumb {
+                    position: absolute;
+                    z-index: 0;
+                    opacity: .2;
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+
+                    img {
+                        width: 100%;
+                        margin-top: -50%;
+                        .transform(translateY(25%));
+                    }
+                }
+
+                &:hover {
+                    .thumb {
+                        opacity: .4;
+                    }
+                }
+
+                .text {
+                    line-height: 36px;
+                }
+            }
+
+            li.divider {
+                height: 32px;
+                padding: 0px 30px;
+                line-height: 30px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                font-size: 16px;
+                font-weight: bold;
+                background-color: black;
+                border-top: 2px solid white;
+
+                &:first-child {
+                    border-top: 0px solid white;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
