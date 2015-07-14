@@ -18,3 +18,11 @@ nosetests.xml
 *.egg-info
 Mopidy_Mopify.egg-info/
 mopidy_mopify/sync.ini
+
+# ignore all in vendor except deps in version control
+src/vendor/
+!src/vendor/angular-echonest/
+!src/vendor/angular-prompt/
+!src/vendor/angular-spotify/
+!src/vendor/mopidy/
+!src/vendor/README.md
