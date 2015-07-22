@@ -1,0 +1,185 @@
+@import 'lesshat';
+
+#overview {
+    padding: 35px 50px;
+
+    .pagetitle {
+        color: #c0c0c0;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+
+        .sub {
+            padding-left: 5px;
+            color: #777;
+        }
+
+        .button {
+            float: right;
+            margin-top: -12px;
+        }
+    }
+
+    .pagecontent {
+        padding-top: 20px;
+        padding-bottom: 80px;
+        font-size: 14px;
+
+        #tileview {
+            margin-left: -25px;
+            margin-right: -25px;
+
+            .single-tile {
+                padding: 0 25px 50px 25px;
+                position: relative;
+
+                .tileart {
+                    position: relative;
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 100%;
+                    text-align: center;
+                    background-color: rgba(0,0,0,.1);
+
+                    img {
+                        min-height: 100%;
+                        min-width: 100%;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        margin-top: 100%;
+                    }
+                }
+
+                .tileinfo {
+                    padding-top: 5px;
+
+                    a {
+                        color: #404040;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+
+                    span {
+                        .transition(all, .3s, ease);
+
+                        &.year {
+                            font-size: 14px;
+                            color: #bbb;
+                            display: block;
+                        }
+                    }
+
+                    &.clickable:hover span.name {
+                        color: black;
+                    }
+                }
+            }
+
+            .service .status {
+                display: inline-block;
+                padding-left: 5px;
+            }
+        }
+
+        .settingwrap {
+            border-bottom: 1px solid #e2e2e2;
+            padding: 25px 0;
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                border: none;
+                padding-bottom: 0;
+            }
+
+            .input input {
+                width: 100%;
+                background: white;
+                padding: 7px 12px;
+                border-radius: 5px;
+                border: 1px solid #c0c0c0;
+            }
+
+            .description {
+                font-weight: normal;
+                font-size: 13px;
+                p {
+                    margin: 0 0 10px 0;
+                }
+            }
+        }
+
+        #browsewrap {
+            .browseitem {
+                width: 90%;
+                margin-bottom: 50px;
+                margin-right: 2.5%;
+                margin-left: 2.5%;
+                border: 1px solid #ccc;
+                box-shadow: 0 0 4px rgba(0,0,0,.1);
+
+                .text {
+                    padding: 20px;
+
+                    .title {
+                        color: #404040;
+                    }
+
+                    .artist {
+                        color: #777;
+                    }
+                }
+                
+                .imagewrap {
+                    position: relative;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .hoverwrap .iconwrap {
+                        position: absolute;
+                        top: 50%;
+                        width: 100%;
+                        .icon {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pagecontent.loading {
+        position: relative;
+        svg {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -35px;
+            margin-top: -35px;
+        }
+    }
+
+    #searchresults {
+        padding-bottom: 30px;
+    }
+}

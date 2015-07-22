@@ -1,0 +1,139 @@
+@import 'lesshat';
+
+#featured {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        background-color: rgba(0,0,0,.4);
+        opacity: 1;
+        .transition(all, .5s, ease);
+    }
+
+    .title {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 30px;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .playlist {
+        margin-top: 10px;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            background-color: rgba(0,0,0,.4);
+            opacity: 1;
+            .transition(all, .5s, ease);
+        }
+
+        .cover {
+            float: left;
+            margin-top: 35px;
+
+            img {
+                height: 225px;
+                width: 225px;
+                box-shadow: 0 0 40px rgba(0,0,0,.5);
+            }
+        }
+
+        .details {
+            float: left;
+            width: calc(100% - 250px);
+            margin-top: 35px;
+            margin-left: 20px;
+            color: white;
+            font-size: 21px;
+            text-transform: uppercase;
+            text-shadow: 0 0 2px rgba(0,0,0,.3);
+
+            .tracklist .track {
+                padding: 7px 0;
+                border-top: 1px solid #666;
+                font-size: 13px;
+                text-transform: none;
+                color: #ccc;
+                .transition(all, .3s, ease);
+
+                .user-select(none);
+
+				.name, .artist {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+            }
+        }
+
+        .details.fullwidth {
+            width: 100%;
+        }
+
+        .hoverwrap {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            right: 0;
+            bottom: 5px;
+            z-index: 50;
+            background-color: rgba(0,0,0,.5);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            webkit-transition: all .3s ease;
+            .transition(all, .3s, ease);
+
+            .iconwrap {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                .transform(translateY(-50%));
+            }
+
+            .icon {
+                font-size: 40px;
+                line-height: 40px;
+                cursor: pointer;
+                color: #bfbfbf;
+                .transition(all, .3s, ease);
+
+                &:hover {
+                    color: white;
+                }
+
+                a {
+                    color: #bfbfbf;
+
+                    &:hover {
+                        color: white;
+                    }
+                    &:hover:after {
+                        width: 0;
+                    }
+                }
+            }
+
+            .icon.small {
+                font-size: 27px;
+            }
+        }
+        &:hover .hoverwrap {
+            opacity: 1;
+        }
+    }
+}

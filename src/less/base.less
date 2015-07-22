@@ -51,49 +51,45 @@ img[src=""] {
     .border-radius(25px);
     .transition(all, .3s, ease);
     font-size: 14px;
-}
 
-.button.white {
-    border: 1px solid #c0c0c0;
-    padding: 6px 15px 3px 15px;
-    text-transform: uppercase;
-    margin-left: 10px;
-    color: #c0c0c0;
+	&.white {
+		border: 1px solid #c0c0c0;
+		padding: 6px 15px 3px 15px;
+		text-transform: uppercase;
+		margin-left: 10px;
+		color: #c0c0c0;
 
-    .text {
-        float: left;
-        margin: -1px 7px 0 0;
-        float: left;
-        margin: -1px 7px 0 0;
-    }
+		.text {
+			float: left;
+			margin: -1px 7px 0 0;
+			float: left;
+			margin: -1px 7px 0 0;
+		}
 
-    &.active, &:hover {
-        background-color: #fafafa;
-        color: #777;
-    }
-}
+		&.active, &:hover {
+			background-color: #fafafa;
+			color: #777;
+		}
+	}
 
-.button.white.active,
-.button.white:hover {
-}
+	&.dangerous.active,
+	&.dangerous:hover {
+		border-color: #e74c3c;
+		color: #e74c3c;
+	}
 
-.button.dangerous.active,
-.button.dangerous:hover {
-    border-color: #e74c3c;
-    color: #e74c3c;
-}
+	&.fullwidth {
+		width: 100%;
+		text-align: center;
 
-.button.fullwidth {
-    width: 100%;
-    text-align: center;
+		.text {
+			float: none;
+		}
 
-    .text {
-        float: none;
-    }
-
-    .ss-icon {
-        float: right;
-    }
+		.ss-icon {
+			float: right;
+		}
+	}
 }
 
 .toggle-switch {
@@ -135,16 +131,17 @@ img[src=""] {
                 background-color: #f5f5f5;
                 color: #404040;
             }
+
+			&.divider {
+				background-color: #ddd;
+				height: 1px;
+				width: 96%;
+				min-width: 96%;
+				margin-left: 2%;
+				padding: 0;
+			}
         }
 
-        li.divider {
-            background-color: #ddd;
-            height: 1px;
-            width: 96%;
-            min-width: 96%;
-            margin-left: 2%;
-            padding: 0;
-        }
     }
 }
 

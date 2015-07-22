@@ -8,6 +8,31 @@
         .transition(all, .3s, ease);
         .user-select(none);
 
+		&.selected, &:hover {
+			background-color: #f2f2f2;
+		}
+
+		&.loading {
+			cursor: default;
+			color: #aaa;
+			background-color: white !important;
+		}
+
+        a {
+            color: #777;
+        }
+		
+		.artists, .album, .name {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			padding-right: 10px;
+		}
+
+		.artists, .album {
+			color: #777;
+		}
+
         .nowplaying {
             background-image: url("../images/ani_equalizer_black.gif");
             background-repeat: no-repeat;
@@ -17,16 +42,6 @@
         .length {
             color: #777;
         }
-
-        a {
-            color: #777;
-        }
-    }
-
-    .track.loading {
-        cursor: default;
-        color: #aaa;
-        background-color: white !important;
     }
 }
 

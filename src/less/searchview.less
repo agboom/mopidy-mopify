@@ -1,0 +1,244 @@
+@import 'lesshat';
+
+#searchview {
+    &.topresult {
+        .cover {
+            width: 100%;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+
+            &:after {
+                content: '';
+                display: block;
+                margin-top: 100%;
+            }
+
+            img {
+                min-height: 100%;
+                min-width: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .noresults {
+        font-style: italic;
+    }
+
+    .single-tile {
+        width: 100%;
+        margin-bottom: 7px;
+        position: relative;
+        display: block;
+        overflow: hidden;
+
+        &:after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .tileart {
+            width: 25%;
+            float: left;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+
+            &:after {
+                content: '';
+                display: block;
+                margin-top: 100%;
+            }
+
+            img {
+                min-height: 100%;
+                min-width: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .hoverwrap {
+                position: absolute;
+                z-index: 25;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,.7);
+                opacity: 0;
+
+                .iconwrap {
+                    color: white;
+                    position: absolute;
+                    top: 50%;
+                    width: 100%;
+                    text-align: center;
+                    .transform(translateY(-50%));
+
+                    a {
+                        color: white;
+                        text-decoration: none !important;
+                    }
+
+                    .icon {
+                        width: 100%;
+                    }
+
+                    .icon.small {
+                        display: none;
+                    }
+
+                    i {
+                        opacity: .7;
+                        font-size: 20px;
+                        margin-top: 5px;
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover .tileart .hoverwrap {
+            opacity: 1;
+        }
+
+        .tileinfo {
+            width: 70%;
+            padding: 0px 10px;
+            top: 50%;
+            left: 30%;
+            position: absolute;
+            .transform(translateY(-50%));
+
+            .name {
+                color: #404040;
+                font-size: 15px;
+                max-height: 60px;
+                overflow: hidden;
+                display: block;
+            }
+
+            .year {
+                color: #777;
+                display: block;
+            }
+        }
+    }
+}
+
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    background-color: rgb(228, 230, 232);
+    padding: 50px;
+    overflow-y: auto;
+
+    .close {
+        position: fixed;
+        top: 35px;
+        right: 50px;
+        z-index: 10;
+        color: #404040;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .inner {
+        .inputwrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding-top: 35px;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-color: rgb(228, 230, 232);
+            z-index: 5;
+            .transform(translateZ(0));
+
+            .instructions {
+                font-style: italic;
+                display: block;
+            }
+
+            input {
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                font-size: 80px;
+                font-weight: bold;
+                text-transform: uppercase;
+                width: 100%;
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+
+        .resultwrap {
+            margin-top: 150px;
+            margin-left: -20px;
+            margin-right: -20px;
+
+            .column {
+                padding: 0 25px;
+                margin-bottom: 25px;
+
+                .title {
+                    position: relative;
+                    border-bottom: 1px solid #b7b7b7;
+                    margin-bottom: 15px;
+
+                    h2 {
+                        margin: 0;
+                    }
+
+                    .more {
+                        position: absolute;
+                        right: 0;
+                        top: 5px;
+                        color: #777;
+                        font-style: italic;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .resultwrap.loading {
+            text-align: center;
+
+            svg {
+                width: 70px;
+                height: 70px;
+                position: absolute;
+                top: 40%;
+            }
+        }
+    }
+}

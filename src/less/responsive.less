@@ -1,0 +1,353 @@
+@import 'lesshat';
+
+/**
+ * Responsive heights
+ */
+@media all and (max-height: 900px) {
+	#menu {
+		max-height: calc(100% - 180px);
+		overflow-y: auto;
+
+		.block {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	#accounts {
+		.account {
+			margin: 15px 0 0px 0;
+		}
+	}
+
+	#header.small {
+		height: 150px;
+
+		.lefttext {
+			padding-top: 90px;
+		}
+	}
+
+	#player {
+		.controlwrap {
+			padding: 40px 53px 5px 50px;
+		}
+
+		#seekbar {
+			.trackname {
+				margin-top: 12px;
+			}
+		}
+	}
+}
+
+@media all and (max-height: 800px) {
+	#accounts .account,
+	#accounts .account a,
+	#menu .block .content#search input,
+	#menu .block .content,
+	#menu .block .content a {
+		font-size: 17px;
+	}
+
+	#menu .block .content#search .ss-icon,
+	#accounts .title,
+	#menu .block .title {
+		font-size: 14px;
+	}
+
+	#menu {
+		.block .content ul li {
+			padding: 2px 0 2px 0;
+		}
+	}
+
+	#accounts {
+		.account {
+			margin: 5px 0 0px 0;
+			overflow: hidden;
+			height: 25px;
+
+			.profileimage {
+				width: 20px;
+				height: 20px;
+
+				img {
+					width: 20px;
+				}
+			}
+
+			.content {
+				padding-left: 10px;
+
+				.username {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.search-overlay {
+		.inner {
+			.inputwrap {
+				padding-top: 20px;
+				padding-left: 50px;
+				padding-right: 50px;
+
+				input {
+					font-size: 60px;
+				}
+			}
+
+			.resultwrap {
+				margin-top: 100px;
+			}
+		}
+	}
+}
+
+@media all and (max-height: 600px) {
+    #accounts {
+        display: none;
+    }
+
+    #menu {
+        max-height: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+/**
+ * Responsive widths
+ */
+@media all and (max-width: 1600px){
+    #leftside {
+        width: 250px;
+    }
+
+    #accounts, #menu {
+        padding: 20px;
+    }
+
+    #mainwrap {
+        margin-left: 250px;
+    }
+}
+
+@media all and (max-width: 1200px){
+    #leftside{
+        width: 200px;
+    }
+
+    #mainwrap{
+        margin-left: 200px;
+    }
+}
+
+@media all and (max-width: 1023px){
+    #seekbar {
+        display: block;
+        width: 100%;
+        text-align: center;
+        float: none;
+        padding: 5px 0 0 0;
+
+		.barwrap {
+			display: none;
+		}
+
+		.trackname .title,
+		.trackname .artist {
+			font-size: 13px;
+		}
+    }   
+
+
+
+    #player {
+		.controlwrap {
+			padding: 10px 20px 9px 20px;
+
+			&.left {
+				width: 65%;
+			}
+
+			&.right {
+				width: 35%;
+				padding-left: 0;
+				padding-right: 15px;
+
+				.iconwrap {
+					width: 100%;
+				}
+			}
+		}
+    }
+
+    #leftside {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: -300px;
+        height: 100%;
+        overflow: auto;
+		.transition(left, .25s, ease);
+
+		&.show {
+			left: 0;
+		}
+    }
+
+    #menu {
+        max-height: none;
+        height: auto;
+        overflow-y: auto;
+        padding-bottom: 0;
+
+		.block .content ul li ul.submenu{
+			display: none;
+		}
+    }
+
+    #accounts {
+        display: block;
+        position: static;
+    }
+
+    #mainwrap {
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    #header {
+        height: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+
+		&.big {
+			height: auto;
+			min-height: 50px;
+		}
+
+		&.small {
+			height: 50px;
+
+			.centertext {
+				display: none;
+			}
+
+			.lefttext {
+				padding-top: 15px;
+				padding-left: 20px;
+				font-size: 16px;
+			}
+		}
+    }
+
+    #featured {
+		.title {
+			margin: 10px 12%;
+			font-size: 15px;
+			width: 75%;
+		}
+
+		.playlist {
+			display: none;
+		}
+    }
+
+
+    #overview {
+        padding: 25px 20px;
+
+		.pagetitle .button {
+			float: right;
+			margin-top: 0;
+			margin-left: 0;
+			margin-right: 10px;
+
+			.text {
+				display: none;
+			}
+		}
+    }
+
+	// TODO: is the #application selector necessary here?
+    #application .mobilemenutoggle {
+        position: fixed;
+        right: 15px;
+        top: 12px;
+        z-index: 500;
+        padding: 5px;
+
+		.line {
+			height: 2px;
+			width: 25px;
+			background-color: white;
+			box-shadow: 0 0 3px rgba(0,0,0,.5);
+			margin-top: 8px;
+
+			&::before, &::after {
+				position: absolute;
+				width: 25px;
+				height: 2px;
+				background-color: white;
+				box-shadow: 0 0 3px rgba(0,0,0,.5);
+				content: "";
+			}
+
+			&::before {
+				margin-top: -8px;
+			}
+
+			&::after {
+				margin-top: 8px;
+			}
+		}
+    }
+
+    #browsewrap .browseitem .imagewrap .hoverwrap, 
+    #tileview .single-tile .tileart .hoverwrap {
+        opacity: 1;
+    }
+
+    .search-overlay {
+		.inner {
+			padding: 0;
+
+			.inputwrap {
+				padding-top: 20px;
+				padding-left: 20px;
+				padding-right: 20px;
+
+				input {
+					font-size: 30px;
+				}
+			}
+
+			.resultwrap {
+				margin-top: 60px;
+			}
+		}
+
+		.close {
+			right: 20px;
+			top: 20px;
+		}
+    }
+}
+
+@media all and (max-width: 768px) {
+    .search-overlay .inner .resultwrap {
+        margin-left: 0;
+        margin-right: 0;
+
+		.column {
+			padding: 0;
+		}
+    }
+    
+}
