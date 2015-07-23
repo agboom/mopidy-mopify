@@ -282,7 +282,7 @@ module.exports = function ( grunt ) {
               paths: [ "src/less", "src/vendor/lesshat/build" ]
             },
             files: {
-              "<%= build_dir %>/src/css/lesscompile.css": "src/less/**/*.less"
+              "<%= build_dir %>/src/css/50-lesscompile.css": "src/less/**/*.less"
             }
           }
         },
@@ -469,11 +469,14 @@ module.exports = function ( grunt ) {
 
     /**
       * The `build` task gets your app ready to run for development and testing.
+	  *
+	  * To test the less styles, remove css/50-styles.css temporarily from the css directory
+	  * TODO: remove 50-styles.css once migration is complete
       */
     grunt.registerTask( 'build', [
         'clean:build', 'html2js', 'jshint:src', 'less:development',
         'copy:build_app_assets', 'copy:build_vendor_assets', 'copy:build_vendorcss',
-        'copy:build_vendor_fonts', //'copy:build_appcss', 
+        'copy:build_vendor_fonts', 'copy:build_appcss', 
         'copy:build_appjs', 'copy:build_vendorjs', 'index:build'
     ]);
 
