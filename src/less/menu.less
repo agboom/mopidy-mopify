@@ -9,50 +9,53 @@
     .block {
         margin: 0 0 40px 0;
 
-        .content ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
+        .content {
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
 
 			li {
 				margin: 0;
 				padding: 3px 0 4px 0;
 
-				ul.submenu {
-					padding-left: 15px;
-					margin: 5px 0;
-					font-size: 14px;
-					position: relative;
+			}
 
-					li {
-						padding: 1px 0;
-					}
+			ul.submenu {
+				padding-left: 15px;
+				margin: 5px 0;
+				font-size: 14px;
+				position: relative;
 
+				&.playlists {
+					overflow: hidden;
+					max-height: 400px;
+					.transition(all, .5s, ease);
+				}
+
+				&.playlists.small {
+					max-height: 17px;
 					.shadow {
-						position: absolute;
-						bottom: -20px;
-						left: 0;
-						width: 80%;
-						height: 2px;
-						z-index: 5;
-						.box-shadow(0px, -4px, 10px, #888);
-						.transition(all, .5s, ease);
-					}
-
-					&.playlists {
-						overflow: hidden;
-						max-height: 400px;
-						.transition(all, .5s, ease);
-					}
-
-					&.playlists.small {
-						max-height: 17px;
-						.shadow {
-							bottom: -8px;
-						}
+						bottom: -8px;
 					}
 				}
-            }
+
+				li {
+					padding: 1px 0;
+				}
+
+				.shadow {
+					position: absolute;
+					bottom: -20px;
+					left: 0;
+					width: 80%;
+					height: 2px;
+					z-index: 5;
+					.box-shadow(0px, -4px, 10px, #888);
+					.transition(all, .5s, ease);
+				}
+			}
         }
 
         .content#search {
@@ -60,7 +63,7 @@
                 margin: 5px;
                 display: inline-block;
                 position: relative;
-                width: calc(100% - 40px);
+                width: calc(~"100% - 40px");
 
                 &:after {
                     position: absolute;

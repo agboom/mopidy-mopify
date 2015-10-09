@@ -119,7 +119,7 @@
 }
 
 #seekbar {
-    width: calc(100% - 600px);
+    width: calc(~"100% - 600px");
 
     .trackname {
         text-align: center;
@@ -133,39 +133,26 @@
         &:hover {
             text-decoration: none;
         }
-
-        .title {
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        .artist {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 14px;
-        }
     }
+
+	.title {
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 3px;
+	}
+
+	.artist {
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		font-size: 14px;
+	}
 
     .barwrap {
         width: 100%;
         position: relative;
 
-        .time {
-            display: inline-block;
-            color: #fff;
-            width: 40px;
-            font-size: 14px;
-        }
-
-        .time#total {
-            text-align: right;
-            color: #aaa;
-            width: calc(100% - 55px);
-        }
-
         .bar {
-            width: calc(100% - 100px);
+            width: calc(~"100% - 100px");
             position: absolute;
             cursor: pointer;
             display: inline-block;
@@ -184,4 +171,17 @@
             }
         }
     }
+
+	.time {
+		display: inline-block;
+		color: #fff;
+		width: 40px;
+		font-size: 14px;
+	}
+
+	.time#total {
+		text-align: right;
+		color: #aaa;
+		width: calc(~"100% - 55px");
+	}
 }

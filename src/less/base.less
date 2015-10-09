@@ -112,37 +112,36 @@ img[src=""] {
         margin: 0;
         padding: 0;
         list-style-type: none;
-
-        li {
-            min-width: 250px;
-            margin: 0;
-            padding: 8px 20px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #777;
-            .transition(all, .3s, ease);
-
-            a {
-                color: #777;
-                text-decoration: none;
-            }
-
-            &:hover {
-                background-color: #f5f5f5;
-                color: #404040;
-            }
-
-			&.divider {
-				background-color: #ddd;
-				height: 1px;
-				width: 96%;
-				min-width: 96%;
-				margin-left: 2%;
-				padding: 0;
-			}
-        }
-
     }
+
+	li {
+		min-width: 250px;
+		margin: 0;
+		padding: 8px 20px;
+		cursor: pointer;
+		font-size: 14px;
+		color: #777;
+		.transition(all, .3s, ease);
+
+		&:hover {
+			background-color: #f5f5f5;
+			color: #404040;
+		}
+
+		&.divider {
+			background-color: #ddd;
+			height: 1px;
+			width: 96%;
+			min-width: 96%;
+			margin-left: 2%;
+			padding: 0;
+		}
+	}
+
+	a {
+		color: #777;
+		text-decoration: none;
+	}
 }
 
 .notifier-msg-content {

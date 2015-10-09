@@ -1,0 +1,147 @@
+@import 'lesshat';
+
+.volumeoverlay, .bgimage {
+    display: none;
+}
+
+#application {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    #leftside {
+        background-color: #f8f8f8;
+        border-right: 1px solid #e4e6e8;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        bottom: 0;
+    }
+
+    #mainwrap {
+        margin-left: 300px;
+    }
+
+    .note {
+        font-size: 13px;
+        border: 1px solid #ccc;
+        color: #777;
+        padding: 0px 15px;
+    }
+}
+
+#accounts, #menu {
+    .title, .block .title {
+        text-transform: uppercase;
+        font-size: 15px;
+        color: #b2b2b2;
+        padding-bottom: 2px;
+        font-weight: 300;
+
+        a {
+            color: #b2b2b2;
+            text-decoration: none !important;
+        }
+    }
+
+    .account, .account a,
+    .block .content, .block .content a {
+        font-size: 18px;
+        color: #777;
+        text-transform: uppercase;
+        font-weight: 300;
+        .transition(color, .2s, ease);
+
+        &:hover, &:active {
+            color: #333;
+            text-decoration: none;
+        }
+    }
+}
+
+// TODO: would it be possible to make these selectors more general? (e.g. .connection { ... })
+#application #overview .pagecontent #tileview .service .status .connection,
+#application #leftside #accounts .account .content .status .connection {
+    height: 4px;
+    width: 4px;
+    background: #a0a0a0;
+    display: inline-block;
+    margin: 0 4px 2.5px 0;
+    .border-radius(9999px);
+}
+
+#application #overview .pagecontent #tileview .service .status .connection.connected,
+#application #leftside #accounts .account .content .status .connection.connected {
+    background: #27ae60;
+}
+
+#application #overview .pagecontent #tileview .service .status .connection.disconnected,
+#application #leftside #accounts .account .content .status .connection.disconnected {
+    background: #c0392b;
+}
+
+#application #overview .pagecontent #browsewrap .browseitem .imagewrap .hoverwrap,
+#application #overview .pagecontent #tileview .single-tile .tileart .hoverwrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    opacity: 0;
+    .transition(all, .3s, ease);
+}
+
+#application #overview .pagecontent #browsewrap .browseitem .imagewrap .hoverwrap:hover,
+#application #overview .pagecontent #tileview .single-tile .tileart .hoverwrap:hover {
+    opacity: 1;
+}
+
+#application #overview .pagecontent #browsewrap .browseitem .imagewrap .hoverwrap .icon,
+#application #overview .pagecontent #tileview .single-tile .tileart .hoverwrap .icon {
+    margin-top: 50%;
+    font-size: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    color: #bfbfbf;
+    text-align: center;
+    .transform(translateY(-45%));
+    .transition(all, .3s, ease);
+}
+#application #overview .pagecontent #browsewrap .browseitem .imagewrap .hoverwrap .icon.small,
+#application #overview .pagecontent #tileview .single-tile .tileart .hoverwrap .icon.small {
+    font-size: 20px;
+}
+#application #overview .pagecontent #browsewrap .browseitem .imagewrap .hoverwrap .icon a,
+#application #overview .pagecontent #tileview .single-tile .tileart .hoverwrap .icon a {
+    color: #bfbfbf;
+    text-decoration: none !important;
+}
+
+#browsewrap, #tileview {
+	.hoverwrap .iconwrap {
+		.icon {
+			&.small {
+			font-size: 20px;
+			}
+
+			a {
+				color: #bfbfbf;
+				text-decoration: none !important;
+			}
+		}
+		a:hover, .icon:hover {
+			color: white;
+		}
+	}
+}
+
+#application #overview .pagecontent #browsewrap .browseitem .imagewrap .hoverwrap .iconwrap a:hover,
+#application #overview .pagecontent #browsewrap .browseitem .imagewrap .hoverwrap .iconwrap .icon:hover,
+#application #overview .pagecontent #tileview .single-tile .tileart .hoverwrap .iconwrap a:hover,
+#application #overview .pagecontent #tileview .single-tile .tileart .hoverwrap .iconwrap .icon:hover {
+    color: white;
+}
